@@ -1,6 +1,6 @@
 # rtkq-demo
 
-An app demonstrating Redux Tool Kit patterns and RTKQ (Redux Tool Kit Query).
+An app demonstrating Redux Toolkit patterns and RTKQ (Redux Toolkit Query).
 
 ## Setup
 
