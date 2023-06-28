@@ -9,3 +9,7 @@ An app demonstrating Redux Toolkit patterns and RTKQ (Redux Toolkit Query).
 ## Run
 
 `npm run start`
+
+## Presentation
+
+[Outline](./presentation/0_Outline.md)
