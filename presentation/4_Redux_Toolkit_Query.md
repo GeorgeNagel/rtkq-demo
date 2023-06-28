@@ -1,5 +1,7 @@
 # Redux Toolkit Query
 
+- Alternatives - apollo, trpc, react query
+
 ```js
 // apis/pokemon.js
 

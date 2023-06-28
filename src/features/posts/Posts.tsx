@@ -1,15 +1,19 @@
-import { useGetPostByIdQuery } from "src/features/posts/postsApi"
+import { useGetPostsQuery } from "src/features/posts/postsApi"
 import { Post } from "src/features/posts/types"
 
-const PostRow = ({ post: Post }) => {
+type PostRowProps = {
+  post: Post
+}
+
+const PostRow = (props: PostRowProps) => {
   return (
     <div>
-      {post.id}: {post.text}
+      {props.post.id}: {props.post.text}
     </div>
   )
 }
 export const Posts = () => {
-  const { data, error, isLoading } = useGetPostByIdQuery("bulbasaur")
+  const { data, error, isLoading } = useGetPostsQuery()
 
   if (isLoading) {
     return <div>Loading...</div>
@@ -19,7 +23,7 @@ export const Posts = () => {
   }
   return (
     <ul>
-      {data.map((post) => (
+      {data?.map((post) => (
         <PostRow post={post} key={post.id} />
       ))}
     </ul>
