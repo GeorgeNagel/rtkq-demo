@@ -1,6 +1,7 @@
 import { Counter } from "src/features/counter/Counter"
 import { Posts } from "src/features/posts/Posts"
 import { LazyPostForm } from "src/features/posts/LazyPost"
+import styles from "./App.module.css"
 
 function App() {
   return (
@@ -15,7 +16,10 @@ function App() {
         <Posts />
         <hr />
         <h1>Lazy query</h1>
-        <LazyPostForm />
+        <div className={styles.row}>
+          <LazyPostForm />
+          <LazyPostForm />
+        </div>
       </header>
     </div>
   )

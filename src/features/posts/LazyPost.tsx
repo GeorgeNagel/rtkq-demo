@@ -8,7 +8,7 @@ type LazyPostProps = {
 
 const LazyPost = (props: LazyPostProps) => (
   <div>
-    {props.post.id}. {props.post.text}
+    Post: {props.post.id}. {props.post.text}
   </div>
 )
 
