@@ -1,6 +1,10 @@
 # Redux Toolkit Query
 
-- Alternatives - apollo, trpc, react query
+- Alternatives
+  - Apollo - for GraphQL
+  - trpc - RPC with Typescript trpc
+  - React Query - Agnostic of Redux but coupled to React
+- Usage without hooks https://redux-toolkit.js.org/rtk-query/usage/usage-without-react-hooks
 
 ```js
 // apis/pokemon.js

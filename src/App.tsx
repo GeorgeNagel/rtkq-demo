@@ -1,6 +1,7 @@
 import { Counter } from "src/features/counter/Counter"
 import { Posts } from "src/features/posts/Posts"
 import { LazyPostForm } from "src/features/posts/LazyPost"
+import { PostsContainer } from "src/features/posts/PostContainer"
 import styles from "./App.module.css"
 
 function App() {
@@ -20,6 +21,9 @@ function App() {
           <LazyPostForm />
           <LazyPostForm />
         </div>
+        <hr />
+        <h1>With Container</h1>
+        <PostsContainer />
       </header>
     </div>
   )

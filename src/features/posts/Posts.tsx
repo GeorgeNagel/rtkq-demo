@@ -1,7 +1,7 @@
 import { useGetPostsQuery } from "src/features/posts/postsApi"
 import { Post } from "src/features/posts/types"
 
-type PostRowProps = {
+interface PostRowProps {
   post: Post
 }
 

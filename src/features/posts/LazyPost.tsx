@@ -2,7 +2,7 @@ import React, { useState } from "react"
 import { useLazyGetPostByIdQuery } from "src/features/posts/postsApi"
 import { Post } from "src/features/posts/types"
 
-type LazyPostProps = {
+interface LazyPostProps {
   post: Post
 }
 
@@ -13,8 +13,7 @@ const LazyPost = (props: LazyPostProps) => (
 )
 
 export const LazyPostForm = () => {
-  const [trigger, { data, isFetching, error }, lastPromiseInfo] =
-    useLazyGetPostByIdQuery()
+  const [trigger, { data, isFetching, error }] = useLazyGetPostByIdQuery()
 
   const [id, setId] = useState("0")
   const [preferCache, setPreferCache] = useState(false)

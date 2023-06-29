@@ -9,8 +9,9 @@
 	2. Thunks
 	3. RTKQ
 		1. Get request with caching
-		2. POST data
+		2. Example with container components
+		3. POST data
 			1. Optimistic updates?
-		3. Polling
-		4. Middleware to change page on success?
-		5. Debouncing using useDebounce and RTKQ?
+		4. Polling
+		5. Middleware to change page on success?
+		6. Debouncing using useDebounce and RTKQ?
