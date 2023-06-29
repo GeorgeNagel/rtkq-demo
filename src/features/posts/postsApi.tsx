@@ -12,6 +12,15 @@ export const postsApi = createApi({
     getPostById: builder.query<Post, number>({
       query: (id) => `posts/${id}/`,
     }),
+    createPost: builder.mutation<Post, string>({
+      query: (message: string) => ({
+        url: `posts/`,
+        method: "POST",
+        body: {
+          text: message,
+        },
+      }),
+    }),
   }),
 })
 

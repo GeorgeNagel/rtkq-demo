@@ -11,7 +11,6 @@
 		1. Get request with caching
 		2. Example with container components
 		3. POST data
-			1. Optimistic updates?
 		4. Polling
 		5. Middleware to change page on success?
 		6. Debouncing using useDebounce and RTKQ?
