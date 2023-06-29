@@ -17,6 +17,7 @@ export const LazyPostForm = () => {
     useLazyGetPostByIdQuery()
 
   const [id, setId] = useState("0")
+  const [preferCache, setPreferCache] = useState(false)
 
   const maybeRenderLazyPost = () => {
     if (isFetching) {
@@ -31,15 +32,30 @@ export const LazyPostForm = () => {
   }
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
-    const preferCache = false
     trigger(parseInt(id), preferCache)
   }
   return (
     <div>
       {maybeRenderLazyPost()}
+      <br />
       <form onSubmit={(e) => handleSubmit(e)}>
-        <input value={id} onChange={(e) => setId(e.target.value)} />
-        <button>Submit</button>
+        <label>
+          <div>Post Id</div>
+          <input value={id} onChange={(e) => setId(e.target.value)} />
+        </label>
+        <label>
+          <div>Prefer Cache?</div>
+          <input
+            type="checkbox"
+            checked={preferCache}
+            onChange={(e) => {
+              setPreferCache(!preferCache)
+            }}
+          />
+        </label>
+        <div>
+          <button>Submit</button>
+        </div>
       </form>
     </div>
   )
