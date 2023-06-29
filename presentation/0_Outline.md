@@ -6,9 +6,7 @@
 4. [Redux Toolkit Query](./4_Redux_Toolkit_Query.md)
 5. Examples
 	1. Slices
-		1. Some basic UI state?
 	2. Thunks
-		1. Some basic GET request?
 	3. RTKQ
 		1. Get request with caching
 		2. POST data

@@ -17,4 +17,4 @@ export const postsApi = createApi({
 
 // Export hooks for usage in functional components, which are
 // auto-generated based on the defined endpoints
-export const { useGetPostsQuery, useGetPostByIdQuery } = postsApi
+export const { useGetPostsQuery, useLazyGetPostByIdQuery } = postsApi

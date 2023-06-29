@@ -22,10 +22,13 @@ export const Posts = () => {
     return <div>Problemo</div>
   }
   return (
-    <ul>
-      {data?.map((post) => (
-        <PostRow post={post} key={post.id} />
-      ))}
-    </ul>
+    <div>
+      Posts loaded on mount
+      <ul>
+        {data?.map((post) => (
+          <PostRow post={post} key={post.id} />
+        ))}
+      </ul>
+    </div>
   )
 }
