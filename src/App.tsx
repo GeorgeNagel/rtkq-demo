@@ -3,6 +3,8 @@ import { Posts } from "src/features/posts/Posts"
 import { LazyPostForm } from "src/features/posts/LazyPost"
 import { PostsContainer } from "src/features/posts/PostContainer"
 import { CreatePostContainer } from "src/features/posts/CreatePostContainer"
+import { DeletePostContainer } from "src/features/posts/DeletePostContainer"
+import { PollingPosts } from "src/features/posts/PollingPosts"
 import styles from "./App.module.css"
 
 function App() {
@@ -28,6 +30,12 @@ function App() {
         <hr />
         <h1>POST Posts</h1>
         <CreatePostContainer />
+        <hr />
+        <h1>DELETE Posts</h1>
+        <DeletePostContainer />
+        <hr />
+        <h1>Polling</h1>
+        <PollingPosts />
       </header>
     </div>
   )
