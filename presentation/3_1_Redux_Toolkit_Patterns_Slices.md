@@ -1,5 +1,9 @@
 # Redux Toolkit Patterns
 
+Why Redux Toolkit?
+- Protect against pitfalls?
+- Reduce boilerplate?
+
 ## Slices
 
 ```js
