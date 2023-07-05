@@ -12,5 +12,4 @@
 		2. Example with container components
 		3. POST data
 		4. Polling
-		5. Middleware to change page on success?
-		6. Debouncing using useDebounce and RTKQ?
+		5. Listener middleware
