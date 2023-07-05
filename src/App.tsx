@@ -5,6 +5,7 @@ import { PostsContainer } from "src/features/posts/PostContainer"
 import { CreatePostContainer } from "src/features/posts/CreatePostContainer"
 import { DeletePostContainer } from "src/features/posts/DeletePostContainer"
 import { PollingPosts } from "src/features/posts/PollingPosts"
+import { CatFact } from "src/features/catFacts/CatFact"
 import styles from "./App.module.css"
 
 function App() {
@@ -36,6 +37,9 @@ function App() {
         <hr />
         <h1>Polling</h1>
         <PollingPosts />
+        <hr />
+        <h1>Listener Middleware</h1>
+        <CatFact />
       </header>
     </div>
   )
