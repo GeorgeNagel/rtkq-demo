@@ -1,5 +1,9 @@
 # Redux Toolkit Query
 
+- Promises
+  - Either Pending, Fulfillfed, or Rejected
+  - Chainable via `.then`, `.catch`, or `.finally`
+
 - Alternatives
   - Apollo - for GraphQL
   - trpc - RPC with Typescript trpc
@@ -73,3 +77,4 @@ export default function Pokemon() {
 ### Sources
 
 -   https://redux-toolkit.js.org/rtk-query/overview
+-   https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise

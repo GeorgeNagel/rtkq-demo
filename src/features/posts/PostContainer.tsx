@@ -20,6 +20,7 @@ interface PostsProps {
   isFetching: boolean
   error: any
   fetchPosts(): void
+  requestStatus: string
 }
 
 const Posts = (props: PostsProps) => {
@@ -38,6 +39,7 @@ const Posts = (props: PostsProps) => {
         ))}
       </ul>
       <button onClick={props.fetchPosts}>Fetch</button>
+      <div>GET request status: {props.requestStatus}</div>
     </div>
   )
 }
@@ -48,6 +50,7 @@ const mapStateToProps = (state: any, ownProps: any) => {
   return {
     posts: data || [],
     isFetching,
+    requestStatus: status,
   }
 }
 

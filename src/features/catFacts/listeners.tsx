@@ -26,12 +26,6 @@ const performExpensiveLetterPresenceCalculation = async (fact: Fact) => {
 catFactListenerMiddleware.startListening({
   matcher: catFactsApi.endpoints.getRandomFact.matchFulfilled,
   effect: async (action, listenerApi) => {
-    // Run whatever additional side-effect-y logic you want here
-    console.log("Todo added: ", action.payload.text)
-
-    // Can cancel other running instances
-    listenerApi.cancelActiveListeners()
-
     listenerApi.dispatch(setPerformingExpensiveCalculation())
 
     // Run async logic

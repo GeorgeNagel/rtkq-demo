@@ -10,37 +10,45 @@ import styles from "./App.module.css"
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <h1>Simple Slice</h1>
-        <Counter />
-        <hr />
-        <h1>Posts loaded on mount</h1>
-        <Posts />
-        <b>Note one request across both instances:</b>
-        <Posts />
-        <hr />
-        <h1>Lazy query</h1>
-        <div className={styles.row}>
+    <div className={styles.app}>
+      <div>
+        <div className={styles.section}>
+          <div className={styles["section-header"]}>Simple counter slice</div>
+          <Counter />
+        </div>
+        <div className={styles.section}>
+          <div className={styles["section-header"]}>Posts loaded on mount</div>
+          <Posts />
+          <b>Note one request across both instances:</b>
+          <Posts />
+        </div>
+        <div className={styles.section}>
+          <div className={styles["section-header"]}>Lazy query</div>
           <LazyPostForm />
+          <hr />
           <LazyPostForm />
         </div>
-        <hr />
-        <h1>With Container</h1>
-        <PostsContainer />
-        <hr />
-        <h1>POST Posts</h1>
-        <CreatePostContainer />
-        <hr />
-        <h1>DELETE Posts</h1>
-        <DeletePostContainer />
-        <hr />
-        <h1>Polling</h1>
-        <PollingPosts />
-        <hr />
-        <h1>Listener Middleware</h1>
-        <CatFact />
-      </header>
+        <div className={styles.section}>
+          <div className={styles["section-header"]}>With Container</div>
+          <PostsContainer />
+        </div>
+        <div className={styles.section}>
+          <div className={styles["section-header"]}>POST Posts</div>
+          <CreatePostContainer />
+        </div>
+        <div className={styles.section}>
+          <div className={styles["section-header"]}>DELETE Posts</div>
+          <DeletePostContainer />
+        </div>
+        <div className={styles.section}>
+          <div className={styles["section-header"]}>Polling</div>
+          <PollingPosts />
+        </div>
+        <div className={styles.section}>
+          <div className={styles["section-header"]}>Listener Middleware</div>
+          <CatFact />
+        </div>
+      </div>
     </div>
   )
 }
