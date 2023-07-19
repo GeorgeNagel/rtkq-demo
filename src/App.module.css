@@ -22,3 +22,7 @@
 .section-header {
     font-size: 2rem;
 }
+
+.row {
+    display: flex;
+}

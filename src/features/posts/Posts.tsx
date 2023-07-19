@@ -23,7 +23,7 @@ export const Posts = () => {
   }
   return (
     <div>
-      Posts loaded on mount
+      Posts loaded on mount via hooks
       <ul>
         {data?.map((post) => (
           <PostRow post={post} key={post.id} />

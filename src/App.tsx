@@ -17,19 +17,22 @@ function App() {
           <Counter />
         </div>
         <div className={styles.section}>
-          <div className={styles["section-header"]}>Posts loaded on mount</div>
+          <div className={styles["section-header"]}>
+            Posts GET on mount (hooks)
+          </div>
           <Posts />
-          <b>Note one request across both instances:</b>
+          <b>Note one request across both instances!</b>
           <Posts />
         </div>
         <div className={styles.section}>
-          <div className={styles["section-header"]}>Lazy query</div>
-          <LazyPostForm />
-          <hr />
-          <LazyPostForm />
+          <div className={styles["section-header"]}>Lazy GET query</div>
+          <div className={styles.row}>
+            <LazyPostForm />
+            <LazyPostForm />
+          </div>
         </div>
         <div className={styles.section}>
-          <div className={styles["section-header"]}>With Container</div>
+          <div className={styles["section-header"]}>GET With Container</div>
           <PostsContainer />
         </div>
         <div className={styles.section}>

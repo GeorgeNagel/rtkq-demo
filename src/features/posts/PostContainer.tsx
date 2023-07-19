@@ -32,7 +32,7 @@ const Posts = (props: PostsProps) => {
   }
   return (
     <div>
-      Posts
+      Posts:
       <ul>
         {props.posts.map((post) => (
           <PostRow post={post} key={post.id} />
