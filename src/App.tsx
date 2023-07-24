@@ -10,8 +10,8 @@ import styles from "./App.module.css"
 
 function App() {
   return (
-    <div className={styles.app}>
-      <div>
+    <div className={styles["app-container"]}>
+      <div className={styles.app}>
         <div className={styles.section}>
           <div className={styles["section-header"]}>Simple counter slice</div>
           <Counter />

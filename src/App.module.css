@@ -1,8 +1,12 @@
-.app {
+.app-container {
     display: flex;
     flex-direction: column;
     align-items: center;
     background-color: #eee;
+}
+
+.app {
+    max-width: 500px;
 }
 
 .row {

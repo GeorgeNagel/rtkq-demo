@@ -5,6 +5,7 @@ import {
   selectFactRequestSuccesses,
   selectPerformingExpensiveCalculation,
 } from "./catFactsSlice"
+import styles from "./CatFact.module.css"
 
 export const CatFact = () => {
   const [trigger, { data, error, isLoading }] = useLazyGetRandomFactQuery()
@@ -22,7 +23,7 @@ export const CatFact = () => {
 
   return (
     <div>
-      <div>Cat fact: {data?.text}</div>
+      <div className={styles.fact}>Cat fact: {data?.text}</div>
       <button onClick={() => trigger()}>Fetch</button>
       <div>Request successes: {successes}</div>
       <div>

@@ -24,9 +24,15 @@ const performExpensiveLetterPresenceCalculation = async (fact: Fact) => {
 // Add one or more listener entries that look for specific actions.
 // They may contain any sync or async logic, similar to thunks.
 catFactListenerMiddleware.startListening({
-  matcher: catFactsApi.endpoints.getRandomFact.matchFulfilled,
+  // Similar to:
+  // matcher: catFactsApi.endpoints.getRandomFact.matchFulfilled,
+  // but untyped for the sake of simpler
+  predicate: (action) => action.type === "catFacts/executeQuery/fulfilled",
   effect: async (action, listenerApi) => {
     listenerApi.dispatch(setPerformingExpensiveCalculation())
+
+    // Can cancel any active listeners (e.g. responding to a previous cat fact response)
+    // listenerApi.cancelActiveListeners()
 
     // Run async logic
     const hasLetterE = await performExpensiveLetterPresenceCalculation(
