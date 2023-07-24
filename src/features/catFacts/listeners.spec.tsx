@@ -6,7 +6,6 @@ import {
   Reducer,
 } from "@reduxjs/toolkit"
 
-import { catFactsApi } from "./catFactsAPI"
 import { catFactListenerMiddleware } from "./listeners"
 import { Fact } from "./types"
 
@@ -17,19 +16,16 @@ describe("catFactListenerMiddleware", () => {
     // https://github.com/reduxjs/redux-toolkit/blob/2b549dd7e0b62c6223f866e600c342c7117d3968/packages/toolkit/src/listenerMiddleware/tests/effectScenarios.test.ts
     // https://github.com/reduxjs/redux-toolkit/blob/2b549dd7e0b62c6223f866e600c342c7117d3968/packages/toolkit/src/query/tests/buildMiddleware.test.tsx#L41
 
+    // Set up our store with the listener middleware that we want to test
     const rootReducer: Reducer = (state, action) => state
     const store = configureStore({
       reducer: rootReducer,
       middleware: (getDefaultMiddleware) =>
-        getDefaultMiddleware().concat([catFactListenerMiddleware.middleware]),
+        getDefaultMiddleware().prepend(catFactListenerMiddleware.middleware),
     })
 
-    const delay = (ms: number) => {
-      return new Promise((resolve) => setTimeout(resolve, ms))
-    }
-
+    // Configure our Spy to inspect which actions are dispatched
     const spy = vi.fn()
-
     // ListenerMiddleware can accept a `predicate` which returns a boolean given action/currentState/originalState args
     const matchAnyPredicate = () => true
     // Listeners can be dynamically added to the store
@@ -43,6 +39,8 @@ describe("catFactListenerMiddleware", () => {
       }),
     )
 
+    // Dispatch the "fulfilled" action for the getRandomFact endpoint
+    // This simulates a successful fulfillment of that API
     const factFulfilledActionCreator = createAction<Fact>(
       "catFacts/executeQuery/fulfilled",
     )
@@ -59,8 +57,9 @@ describe("catFactListenerMiddleware", () => {
     store.dispatch(factFulfilledActionCreator(fact))
 
     // Wait for the middleware to process the action
-    await delay(2100)
+    await new Promise((resolve) => setTimeout(resolve, 2100))
 
+    // Check that the correct actions have been dispatched
     expect(spy.mock.calls).toEqual([
       [
         {

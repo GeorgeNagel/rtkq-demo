@@ -13,11 +13,9 @@ export const store = configureStore({
     [catFactsApi.reducerPath]: catFactsApi.reducer,
   },
   middleware: (getDefaultMiddleware) =>
-    getDefaultMiddleware().concat([
-      postsApi.middleware,
-      catFactsApi.middleware,
-      catFactListenerMiddleware.middleware,
-    ]),
+    getDefaultMiddleware()
+      .prepend(catFactListenerMiddleware.middleware)
+      .concat([postsApi.middleware, catFactsApi.middleware]),
 })
 
 export type AppDispatch = typeof store.dispatch
