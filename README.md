@@ -22,6 +22,9 @@ Start the Django app
 Start the node app
 `npm run start`
 
+Run the node tests
+`npm run test`
+
 ## Presentation
 
 [Outline](./presentation/0_Outline.md)
