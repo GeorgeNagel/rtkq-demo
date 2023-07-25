@@ -2,9 +2,11 @@
 2. [Legacy Redux Patterns](./2_Legacy_Redux_Patterns.md)
 3. Redux Toolkit Patterns
     1. [Slices](./3_1_Redux_Toolkit_Patterns_Slices.md)
-    2. [Thunks](./3_2_Redux_Toolkit_Patterns_Thunks.md)
-4. [Redux Toolkit Query](./4_Redux_Toolkit_Query.md)
-5. Examples
+	2. [Aside to talk about Promises](./3_2_Promises.md)
+    2. [Thunks](./3_3_Redux_Toolkit_Patterns_Thunks.md)
+4. [React and APIs](./4_React_and_APIs.md)
+5. [Redux Toolkit Query](./5_Redux_Toolkit_Query.md)
+6. Examples
 	1. Slices
 	2. Thunks
 	3. RTKQ

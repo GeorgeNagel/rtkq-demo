@@ -1,8 +1,9 @@
 # Redux Toolkit Patterns
 
-Why Redux Toolkit?
-- Protect against pitfalls?
-- Reduce boilerplate?
+- Centralized state structure and logic
+- Reduced boilerplate, automatic action creators
+- Automatic handling of immutability
+
 
 ## Slices
 

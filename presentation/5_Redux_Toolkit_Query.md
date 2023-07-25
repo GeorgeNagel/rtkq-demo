@@ -1,17 +1,5 @@
 # Redux Toolkit Query
 
-- Promises
-  - Either Pending, Fulfillfed, or Rejected
-  - Chainable via `.then`, `.catch`, or `.finally`
-
-- Alternatives
-  - Apollo - for GraphQL
-  - trpc - RPC with Typescript trpc
-  - React Query - Agnostic of Redux but coupled to React
-- Usage without hooks https://redux-toolkit.js.org/rtk-query/usage/usage-without-react-hooks
-- How is this different from Data Modules?
-  - Observables vs Promises
-  - External support, usage, and documentation
 
 ```js
 // apis/pokemon.js

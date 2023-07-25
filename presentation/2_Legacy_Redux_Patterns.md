@@ -1,7 +1,7 @@
 
 # Legacy Redux Patterns
 
-## Actions
+Everything in separate files
 
 ```js
 // actionTypes/todos.js
@@ -18,8 +18,6 @@ export const addTodo = (id, text) => ({
   id
 })
 ```
-
-## Reducers
 
 ```js
 // reducers/todo.js
@@ -41,8 +39,6 @@ export default function todosReducer(state = initialState, action) {
   }
 }
 ```
-
-## Selectors
 
 ```js
 // selectors/todos.js
