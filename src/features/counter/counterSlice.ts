@@ -19,8 +19,10 @@ const initialState: CounterState = {
 export const incrementAsync = createAsyncThunk(
   "counter/fetchCount",
   async (amount: number) => {
-    const response = await new Promise<{ data: number }>((resolve) =>
-      setTimeout(() => resolve({ data: amount }), 500),
+    const response = await new Promise<{ data: number }>(
+      (resolve, reject) => setTimeout(() => resolve({ data: amount }), 500),
+      // To make the tunk fail/reject, uncomment below
+      // (resolve, reject) => setTimeout(() => reject(), 500),
     )
     // The value we return becomes the `fulfilled` action payload
     return response.data
@@ -70,6 +72,7 @@ export const { increment, decrement, incrementByAmount } = counterSlice.actions
 // the state. Selectors can also be defined inline where they're used instead of
 // in the slice file. For example: `useSelector((state: RootState) => state.counter.value)`
 export const selectCount = (state: RootState) => state.counter.value
+export const selectStatus = (state: RootState) => state.counter.status
 
 // We can also write thunks by hand, which may contain both sync and async logic.
 // Here's an example of conditionally dispatching actions based on current state.

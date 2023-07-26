@@ -8,11 +8,13 @@ import {
   incrementAsync,
   incrementIfOdd,
   selectCount,
+  selectStatus,
 } from "./counterSlice"
 import styles from "./Counter.module.css"
 
 export function Counter() {
   const count = useAppSelector(selectCount)
+  const status = useAppSelector(selectStatus)
   const dispatch = useAppDispatch()
   const [incrementAmount, setIncrementAmount] = useState("2")
 
@@ -62,6 +64,7 @@ export function Counter() {
           Add If Odd
         </button>
       </div>
+      <div className={styles.row}>{status}</div>
     </div>
   )
 }
