@@ -29,7 +29,7 @@ export const { useGetPokemonByNameQuery } = pokemonApi
 import { configureStore } from '@reduxjs/toolkit'
 // Or from '@reduxjs/toolkit/query/react'
 import { setupListeners } from '@reduxjs/toolkit/query'
-import { pokemonApi } from './services/pokemon'
+import { pokemonApi } from './apis/pokemon'
 
 export const store = configureStore({
   reducer: {
@@ -51,7 +51,7 @@ setupListeners(store.dispatch)
 // components/pokemon.js
 
 import * as React from 'react'
-import { useGetPokemonByNameQuery } from './services/pokemon'
+import { useGetPokemonByNameQuery } from './apis/pokemon'
 
 export default function Pokemon() {
   // Using a query hook automatically fetches data and returns query values

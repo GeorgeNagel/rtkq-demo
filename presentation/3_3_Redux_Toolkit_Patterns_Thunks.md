@@ -11,10 +11,14 @@ const initialState = { checklist: [], status: 'unrequested' }
 
 export const laterAddTodo = createAsyncThunk(
   'todos/laterAdd',
-  async (user, { rejectWithValue }) => {
-    const message = await queryToGetMessageByUser(user);
-    return {id: 1, message };
-  }
+  async (message) => {
+    const response = await new Promise((resolve) =>
+    setTimeout(() => resolve({ data: message }), 500),
+  )
+  // The value we return becomes the `fulfilled` action payload
+  return response.data
+},
+
 )
 
 const todosSlice = createSlice({
